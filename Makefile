@@ -7,7 +7,8 @@ SRC = \
   chunk.c \
   memory.c \
   debug.c \
-	value.c
+	value.c \
+	vm.c
 
 OBJ = $(SRC:.c=.o)
 
