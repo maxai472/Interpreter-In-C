@@ -1,5 +1,5 @@
 CC      = gcc
-CFLAGS  = -std=c99 -Wall -Wextra
+CFLAGS  = -std=c99 -Wall -Wextra -MMD -MP
 TARGET  = clox
 
 SRC = \
@@ -7,12 +7,13 @@ SRC = \
   chunk.c \
   memory.c \
   debug.c \
-	value.c \
-	vm.c \
-	scanner.c \
-	compiler.c 
+  value.c \
+  vm.c \
+  scanner.c \
+  compiler.c
 
 OBJ = $(SRC:.c=.o)
+DEP = $(OBJ:.o=.d)
 
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
@@ -20,5 +21,7 @@ $(TARGET): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+-include $(DEP)
+
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJ) $(DEP) $(TARGET)
