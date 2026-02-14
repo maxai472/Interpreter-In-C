@@ -8,7 +8,9 @@ SRC = \
   memory.c \
   debug.c \
 	value.c \
-	vm.c
+	vm.c \
+	scanner.c \
+	compiler.c 
 
 OBJ = $(SRC:.c=.o)
 
