@@ -10,7 +10,8 @@ SRC = \
   value.c \
   vm.c \
   scanner.c \
-  compiler.c
+  compiler.c \
+	object.c 
 
 OBJ = $(SRC:.c=.o)
 DEP = $(OBJ:.o=.d)
