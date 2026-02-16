@@ -11,7 +11,8 @@ SRC = \
   vm.c \
   scanner.c \
   compiler.c \
-	object.c 
+	object.c  \
+	table.c
 
 OBJ = $(SRC:.c=.o)
 DEP = $(OBJ:.o=.d)
